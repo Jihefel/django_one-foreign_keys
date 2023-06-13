@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+   <h1>CRUD Président</h1>
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ajouter</button>
+    </form>
+
+    <ul>
+    {% for p in presidents %}
+        <img src="{{p.image.url}}" alt="" class="w-25 {% if p.genre == 'M' %}
+        border border-5 border-danger
+        {% elif p.genre == 'Femme' %}
+        border border-5 border-primary
+        {% else %}
+        border rounded-circle {{p.genre}}
+        {% endif %}">
+        <li>{{ p.nom }} - {{ p.pays.nom }} - Age : {{ p.age }} - Genre : {{p.genre}}</li>
+    {% empty %}
+        <li>Aucun président enregistré.</li>
+    {% endfor %}
+    </ul>
+{% endblock content %} 

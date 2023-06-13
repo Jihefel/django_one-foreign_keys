@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav>
+    <ul>
+        <li><a href={% url 'index' %}>Home</a></li>
+        <li><a href={% url 'pays_crud' %}>Pays CRUD</a></li>
+        <li><a href={% url 'president_crud' %}>President CRUD</a></li>
+    </ul>
+</nav>
+{% endblock content %}
