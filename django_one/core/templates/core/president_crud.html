@@ -10,9 +10,9 @@
 
     <ul>
     {% for p in presidents %}
-        <img src="{{p.image.url}}" alt="" class="w-25 {% if p.genre == 'M' %}
+        <img src="{{p.image.url}}" alt="" class="w-25 mt-5 {% if p.genre == 'M' %}
         border border-5 border-danger
-        {% elif p.genre == 'Femme' %}
+        {% elif p.genre == 'F' %}
         border border-5 border-primary
         {% else %}
         border rounded-circle {{p.genre}}
